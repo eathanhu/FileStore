@@ -12,7 +12,7 @@ from bot import Bot
 from config import *
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from database.database import *
-from pyrogram.errors.exceptions.bad_request_400 import MessageNotModified
+
 
 @Bot.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
@@ -27,8 +27,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                  InlineKeyboardButton("ᴄʟᴏꜱᴇ", callback_data='close')]
             ])
         )
-        except MessageNotModified:  
-        await query.answer("Already showing help content!", show_alert=False)
 
     elif data == "about":
         await query.message.edit_text(
@@ -39,8 +37,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                  InlineKeyboardButton('ᴄʟᴏꜱᴇ', callback_data='close')]
             ])
         )
-        except MessageNotModified:  
-        await query.answer("Already showing help content!", show_alert=False)
 
     elif data == "start":
         await query.message.edit_text(
@@ -51,8 +47,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                  InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data='about')]
             ])
         )
-        except MessageNotModified:  
-        await query.answer("Already showing help content!", show_alert=False)
 
     elif data == "close":
         await query.message.delete()
