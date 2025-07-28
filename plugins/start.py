@@ -130,6 +130,7 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                     [InlineKeyboardButton("• ᴍᴏʀᴇ ᴄʜᴀɴɴᴇʟs •", url="https://t.me/TheJonesNetwork/5")],
+                    [InlineKeyboardButton("• ꜰʀᴇᴇ ʟᴇᴇᴄʜ ɢʀᴏᴜᴘ •", url="https://t.me/+HfZSMVa6pRFhNjM1")],
 
     [
                     InlineKeyboardButton("• ᴀʙᴏᴜᴛ", callback_data = "about"),
